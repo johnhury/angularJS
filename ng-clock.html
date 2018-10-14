@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myClock">
+<head>
+	<meta charset="UTF-8">
+	<title>angularJs-clock</title>
+	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script> 
+</head>
+<body>
+	<div ng-app ng-controller="MyController">
+		<h1>现在时间是：<span ng-bind="clock"></span></h1>		
+	</div>
+</body>
+<script>
+	angular.module('myClock',[])
+	.controller('MyController', function($scope,$timeout){
+		var updateClock = function(){
+			$scope.clock = new Date();
+		} 
+		updateClock();
+	}
+)
+</script>
+</html>
